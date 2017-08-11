@@ -1,0 +1,13 @@
+SED stands for Stream EDitor
+It is a simple yet powerful utility that parses the text and transforms it seamlessly.
+SED was developed during 1973–74 by Lee E. McMahon of Bell Labs.
+
+GNU SED - SED is written and maintained by the Free Software Foundation (FSF) and it is distributed by GNU/Linux.
+Beauty of SED - Once you get familiar with its syntax, you can solve many complex tasks with a few lines of SED script.
+
+SED can be used in many different ways, such as:
+
+i. Text substitution,
+ii. Selective printing of text files,
+iii. In-a-place editing of text files,
+iv. Non-interactive editing of text files, and many more.

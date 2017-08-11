@@ -1,0 +1,35 @@
+Stream Editor - Workflow
+
+To become an expert SED user, one needs to know its internals.
+SED follows a simple workflow: Read, Execute, and Display.
+The following depicts the workflow.
+
+Read: SED reads a line from the input stream (file, pipe, or stdin)
+and stores it in its internal buffer called pattern buffer.
+
+Execute: All SED commands are applied sequentially on the pattern buffer.
+By default, SED commands are applied on all lines (globally) unless line addressing is specified.
+
+Display: Send the (modified) contents to the output stream.
+After sending the data, the pattern buffer will be empty.
+
+The above process repeats until the file is exhausted.
+
+
+Points to Note
+Pattern buffer is a private, in-memory, volatile storage area used by the SED.
+
+By default, all SED commands are applied on the pattern buffer, hence the input file remains unchanged.
+GNU SED provides a way to modify the input file in-a-place.
+
+There is another memory area called hold buffer which is also private, in- memory, volatile storage area.
+Data can be stored in a hold buffer for later retrieval.
+At the end of each cycle, SED removes the contents of the pattern buffer but the contents of the hold buffer remains persistent between SED cycles.
+However SED commands cannot be directly executed on hold buffer, hence SED allows data movement between the hold buffer and the pattern buffer.
+
+Initially both pattern and hold buffers are empty.
+
+If no input files are provided, then SED accepts input from the standard input stream (stdin).
+
+If address range is not provided by default, then SED operates on each line.
+
